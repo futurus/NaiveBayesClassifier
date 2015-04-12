@@ -22,6 +22,7 @@ def replace(char):
     else:
         return 1
 
+
 def prepare(finput):
     out = []
     lines = [line for line in open(finput)]
@@ -115,6 +116,16 @@ def overallAccuracy(actual, prediction):
     return correct*1.0/len(actual)
 
 
+def analyze(actual, prediction):
+    confMat = confusionMatrix(actual, prediction)
+
+    for i in range(len(confMat)):
+        print 'digit ', i, ' accuracy: ', confMat[i, i] * 1.0 / sum(confMat[i, :])
+
+    print 'Overall accuracy: ', overallAccuracy(actual, prediction)
+    return None
+
+
 def countNB(trainData, trainLabels, m=1, n=1):
     priorDists = getPriorDists(trainLabels)
     numOfTrainDigits = len(trainLabels)
@@ -141,7 +152,7 @@ def trainNB(m=1, n=1, k=1):
     likelihoods = zeros((len(priorDists), numOfFeatures, len(featVals)))
 
     for i in range(len(priorDists)):
-        denom = priorDists[i]*len(trainLabels) + k * len(featVals)
+        denom = priorDists[i] * len(trainLabels) + k * len(featVals)
         for f in range(numOfFeatures):
             for v in range(len(featVals)):
                 likelihoods[i, f, v] = (countTable[i, f, v] + k)/denom
@@ -171,7 +182,6 @@ def classify(testData, testLabels, m=1, n=1, k=1):
                         break
 
         predictions.append(list(OrderedDict(sorted(probs.items(), key=lambda x: x[1], reverse=True)))[0])
-        # print '#case: ', case, '(actual, predicted): (', testLabels[case], ', ', classification[case], ')'
 
     print confusionMatrix(testLabels, predictions)
 
@@ -190,7 +200,7 @@ def autotune(testData, testLabels, m=1, n=1):
 
     accuracy = []
 
-    for k in [x+1 for x in range(2)]:
+    for k in [x + 1 for x in range(50)]:
         toc()
         print 'testing k: ', k
 
@@ -200,12 +210,12 @@ def autotune(testData, testLabels, m=1, n=1):
 
             for dClass in probs.keys():
                 probs[dClass] += log(priorDists[dClass])
-                denom = priorDists[dClass]*len(trainLabels) + k * len(featVals)
+                denom = priorDists[dClass] * len(trainLabels) + k * len(featVals)
 
                 for f in range(numOfFeatures):
                     for v in range(len(featVals)):
                         if allclose(testData[case, f], featVals[v]):
-                            probs[dClass] += log((countMat[dClass, f, v]+k)/denom)
+                            probs[dClass] += log((countMat[dClass, f, v] + k)/denom)
                             break
 
             predictions.append(list(OrderedDict(sorted(probs.items(), key=lambda x: x[1], reverse=True)))[0])
@@ -213,15 +223,32 @@ def autotune(testData, testLabels, m=1, n=1):
         accuracy.append(overallAccuracy(testLabels, predictions))
 
     print accuracy
-    bestk = accuracy.index(max(accuracy))
-    predictions = classify(testData, testLabels, m, n, bestk)
+    bestk = accuracy.index(max(accuracy))+1
+
+    predictions = []
+    for case in range(len(testData)):
+        probs = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
+
+        for dClass in probs.keys():
+            probs[dClass] += log(priorDists[dClass])
+            denom = priorDists[dClass]*len(trainLabels) + bestk * len(featVals)
+
+            for f in range(numOfFeatures):
+                for v in range(len(featVals)):
+                    if allclose(testData[case, f], featVals[v]):
+                        probs[dClass] += log((countMat[dClass, f, v] + bestk)/denom)
+                        break
+
+        predictions.append(list(OrderedDict(sorted(probs.items(), key=lambda x: x[1], reverse=True)))[0])
+
+    print confusionMatrix(testLabels, predictions)
     analyze(testLabels, predictions)
 
     return None
 
 
 tic()
-testData = getData(prepare("testimages"))[0:5]
-testLabels = getLabels("testlabels")[0:5]
-# print classify(testData, testLabels)
+testData = getData(prepare("testimages"))
+testLabels = getLabels("testlabels")
+autotune(testData, testLabels)
 toc()
