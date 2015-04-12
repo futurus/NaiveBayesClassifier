@@ -96,6 +96,25 @@ def getData(digits, m=1, n=1):
     return array(trainData)
 
 
+def confusionMatrix(actual, prediction):
+    mat = zeros((10, 10))
+
+    for i in range(len(actual)):
+        mat[actual[i], prediction[i]] += 1
+
+    return mat
+
+
+def overallAccuracy(actual, prediction):
+    correct = 0
+
+    for i in range(len(actual)):
+        if actual[i] == prediction[i]:
+            correct += 1
+
+    return correct*1.0/len(actual)
+
+
 def countNB(trainData, trainLabels, m=1, n=1):
     priorDists = getPriorDists(trainLabels)
     numOfTrainDigits = len(trainLabels)
@@ -133,7 +152,7 @@ def trainNB(m=1, n=1, k=1):
 def classify(testData, testLabels, m=1, n=1, k=1):
     from collections import OrderedDict
     from math import log
-    classification = []
+    predictions = []
     model, priorDists, numOfFeatures, featVals = trainNB(m, n, k)
 
     toc()
@@ -151,40 +170,58 @@ def classify(testData, testLabels, m=1, n=1, k=1):
                         probs[dClass] += log(model[dClass, f, v])
                         break
 
-        ordered = OrderedDict(sorted(probs.items(), key=lambda x: x[1], reverse=True))
-        print ordered
-        toc()
-        classification.append(ordered[0][0])
-        print '#case: ', case, '(actual, predicted): (', testLabels[case], ', ', classification[case], ')'
+        predictions.append(list(OrderedDict(sorted(probs.items(), key=lambda x: x[1], reverse=True)))[0])
+        # print '#case: ', case, '(actual, predicted): (', testLabels[case], ', ', classification[case], ')'
 
+    print confusionMatrix(testLabels, predictions)
+
+    return predictions
+
+
+def autotune(testData, testLabels, m=1, n=1):
+    from collections import OrderedDict
+    from math import log
+    trainData = getData(prepare("trainingimages"), m, n)
+    trainLabels = getLabels("traininglabels")
+    countMat, priorDists, numOfFeatures, featVals = countNB(trainData, trainLabels, m, n)
+
+    toc()
+    print "done counting"
+
+    accuracy = []
+
+    for k in [x+1 for x in range(2)]:
+        toc()
+        print 'testing k: ', k
+
+        predictions = []
+        for case in range(len(testData)):
+            probs = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
+
+            for dClass in probs.keys():
+                probs[dClass] += log(priorDists[dClass])
+                denom = priorDists[dClass]*len(trainLabels) + k * len(featVals)
+
+                for f in range(numOfFeatures):
+                    for v in range(len(featVals)):
+                        if allclose(testData[case, f], featVals[v]):
+                            probs[dClass] += log((countMat[dClass, f, v]+k)/denom)
+                            break
+
+            predictions.append(list(OrderedDict(sorted(probs.items(), key=lambda x: x[1], reverse=True)))[0])
+
+        accuracy.append(overallAccuracy(testLabels, predictions))
+
+    print accuracy
+    bestk = accuracy.index(max(accuracy))
+    predictions = classify(testData, testLabels, m, n, bestk)
+    analyze(testLabels, predictions)
 
     return None
 
 
 tic()
-testData = getData(prepare("testimages"))
-testLabels = getLabels("testlabels")
-# print testData[0]
-classify(testData, testLabels)
+testData = getData(prepare("testimages"))[0:5]
+testLabels = getLabels("testlabels")[0:5]
+# print classify(testData, testLabels)
 toc()
-
-
-# trainData = getTrainData(prepare("testimages"), m=1, n=1)
-# trainLabels = getLabels("testlabels")
-
-# condTable = trainNB(trainData, trainLabels, k=0, m=1, n=1)
-
-# likelihoods = trainNB()
-# for i in range(len(condTable)):
-# print likelihoods[0, 0]
-# print likelihoods[0, 400]
-
-# print len(trainData)
-# print len(trainData[0])
-# print trainData[0]
-# print trainData[0][0]
-
-# print createFeatures(out[0], 1, 1)[0] in featValues(m=1, n=1)
-
-# print getLabels("testlabels")
-# print getPriorDists(getLabels("testlabels"))
