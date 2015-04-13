@@ -34,7 +34,6 @@ def prepare(finput):
     import operator
 
     lines = map(formatLine, [line for line in open(finput)])
-
     docClassLabels = [line[0] for line in lines]
     docs = [line[1] for line in lines]  # each doc is a dictionary of word:frequency
     dictionary = list(set(reduce(operator.add, [line[1].keys() for line in lines])))
@@ -48,8 +47,26 @@ def prepare(finput):
     return dictionary, docClassLabels, featureMat  # return matrix and labels
 
 
+def translateDoc(finput, dictionary):
+    lines = map(formatLine, [line for line in open(finput)])
+    docClassLabels = [line[0] for line in lines]
+    docs = [line[1] for line in lines]  # each doc is a dictionary of word:frequency
+
+    featureMat = zeros((len(docClassLabels), len(dictionary)))
+
+    for i in range(len(lines)):
+        for word in docs[i].keys():
+            if word in dictionary:
+                featureMat[i, dictionary.index(word)] = docs[i][word]
+
+    return docClassLabels, featureMat
+
+
 def getPriorDists(labels):
-    priorDists = {0: 0, 1: 0}
+    priorDists = {}
+
+    for i in range(len(set(labels))):
+        priorDists[i] = 0
 
     for i in range(len(labels)):
         priorDists[labels[i]] += 1
@@ -61,7 +78,7 @@ def getPriorDists(labels):
 
 
 def confusionMatrix(actual, prediction):
-    mat = zeros((10, 10))
+    mat = zeros((len(set(actual)), len(set(actual))))
 
     for i in range(len(actual)):
         mat[actual[i], prediction[i]] += 1
@@ -85,74 +102,56 @@ def analyze(actual, prediction):
     print confMat
 
     for i in range(len(confMat)):
-        print 'digit', i, 'accuracy:', confMat[i, i] * 1.0 / sum(confMat[i, :])
+        print 'class', i, 'accuracy:', confMat[i, i] * 1.0 / sum(confMat[i, :])
 
     print 'Overall accuracy:', overallAccuracy(actual, prediction)
     return None
 
 
-def countNB(trainData, trainLabels, m=1, n=1):
-    # if we use a dict for last dimension, would be able to save more memory
-    priorDists = getPriorDists(trainLabels)
-    numOfTrainDigits = len(trainLabels)
-    numOfFeatures = len(trainData[0])
-    nFeatVals = 2**(m*n)
+def trainNB(trainMatrix, trainLabels):
+    numOfTrainDocs = len(trainLabels)
+    numOfWords = len(trainMatrix[0])
+    numOfClasses = len(set(trainLabels))
 
-    condProbTable = zeros((len(priorDists), numOfFeatures, nFeatVals))
+    countTable = ones((numOfClasses, numOfWords))
+    denoms = ones((numOfClasses)) * numOfWords * 1.0
 
-    for i in range(numOfTrainDigits):
-        for f in range(numOfFeatures):
-            condProbTable[trainLabels[i], f, trainData[i, f]] += 1
+    for i in range(numOfTrainDocs):
+        countTable[trainLabels[i], :] += trainMatrix[i]
+        denoms[trainLabels[i]] += sum(trainMatrix[i])
 
-    return condProbTable, priorDists, numOfFeatures, nFeatVals
+    for c in range(numOfClasses):
+        countTable[c] = countTable[c]/denoms[c]
 
-
-def trainNB(m=1, n=1, k=1, overlap=False):
-    trainData = getData(prepare("trainingimages"), m, n, overlap)
-    trainLabels = getLabels("traininglabels")
-
-    countTable, priorDists, numOfFeatures, nFeatVals = countNB(trainData, trainLabels, m, n)
-    likelihoods = zeros((len(priorDists), numOfFeatures, nFeatVals))
-
-    for i in range(len(priorDists)):
-        denom = priorDists[i] * len(trainLabels) + k * nFeatVals
-        for f in range(numOfFeatures):
-            for v in range(nFeatVals):
-                likelihoods[i, f, v] = (countTable[i, f, v] + k)/denom
-
-    return likelihoods, priorDists, numOfFeatures, nFeatVals
+    return countTable
 
 
-def classify(m=1, n=1, k=1, overlap=False):
-    from collections import OrderedDict
-    from math import log
+def classify(trainFile, testFile):
+    dictionary, trainingLabels, trainingMatrix = prepare(trainFile)
+    conditionalProbTable = trainNB(trainingMatrix, trainingLabels)
+    testLabels, testMatrix = translateDoc(testFile, dictionary)
+
+    numOfClasses = len(set(trainingLabels))
+    priorProbs = getPriorDists(trainingLabels)
+
     predictions = []
-    model, priorDists, numOfFeatures, nFeatVals = trainNB(m, n, k, overlap)
 
-    toc()
-    print "done training"
+    for i in range(len(testLabels)):
+        posteriorProbs = []
+        if i % 100 == 0:
+            print i
+            toc()
+        for c in range(numOfClasses):
+            posteriorProbs.append(sum(testMatrix[i] * log(conditionalProbTable[c])) + log(priorProbs[c]))
 
-    testData = getData(prepare("testimages"), m, n, overlap)
-    testLabels = getLabels("testlabels")
-    for case in range(len(testData)):
-        probs = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
+        predictions.append(posteriorProbs.index(max(posteriorProbs)))
 
-        for dClass in probs.keys():
-            probs[dClass] += log(priorDists[dClass])
-
-            for f in range(numOfFeatures):
-                probs[dClass] += log(model[dClass, f, testData[case, f]])
-
-        predictions.append(list(OrderedDict(sorted(probs.items(), key=lambda x: x[1], reverse=True)))[0])
 
     analyze(testLabels, predictions)
 
-    return predictions
+    return None
 
 
 tic()
-dictionary, trainingLabels, trainingMatrix = prepare("test_email.txt")
-
-print getPriorDists(trainingLabels)
-
+classify("8category.training.txt", "8category.testing.txt")
 toc()
