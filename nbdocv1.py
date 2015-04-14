@@ -138,9 +138,7 @@ def classify(trainFile, testFile):
 
     for i in range(len(testLabels)):
         posteriorProbs = []
-        if i % 100 == 0:
-            print i
-            toc()
+
         for c in range(numOfClasses):
             posteriorProbs.append(sum(testMatrix[i] * log(conditionalProbTable[c])) + log(priorProbs[c]))
 

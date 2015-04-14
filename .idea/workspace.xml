@@ -7,7 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1c2db77-25ff-43cb-81a3-1b51d62ae6d9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nbdocv1ec.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/8category.testing.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/8category.training.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_email.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testimages" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testlabels" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/train_email.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/trainingimages" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/traininglabels" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbdocv1.py" afterPath="$PROJECT_DIR$/nbdocv1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="naivebayes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,6 +34,7 @@
     <SUITE FILE_PATH="coverage/naivebayes$NBDigitV2.coverage" NAME="NBDigitV2 Coverage Results" MODIFIED="1428836865192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/naivebayes$Prep.coverage" NAME="Prep Coverage Results" MODIFIED="1428812626179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/naivebayes$NBDocV1.coverage" NAME="NBDocV1 Coverage Results" MODIFIED="1428968242370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/naivebayes$NBDocV1EC.coverage" NAME="NBDocV1EC Coverage Results" MODIFIED="1428988432064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -34,23 +45,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="nbdocv1.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nbdocv1.py">
+      <file leaf-file-name="nbdocv1ec.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nbdocv1ec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72477067">
-              <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
+            <state vertical-scroll-proportion="-1.5114679">
+              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding>
                 <element signature="e#25#44#0" expanded="true" />
                 <element signature="e#74#140#0" expanded="false" />
-                <element signature="e#158#336#0" expanded="false" />
-                <element signature="e#366#430#0" expanded="false" />
-                <element signature="e#459#603#0" expanded="false" />
-                <element signature="e#631#1205#0" expanded="false" />
-                <element signature="e#1250#1717#0" expanded="false" />
-                <element signature="e#1751#2005#0" expanded="false" />
-                <element signature="e#2053#2195#0" expanded="false" />
-                <element signature="e#2243#2388#0" expanded="false" />
-                <element signature="e#2428#2691#0" expanded="false" />
+                <element signature="e#1252#1506#0" expanded="false" />
+                <element signature="e#1554#1696#0" expanded="false" />
+                <element signature="e#1744#1889#0" expanded="false" />
+                <element signature="e#1929#2192#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -83,6 +89,7 @@
         <option value="$PROJECT_DIR$/nbdigitv2.py" />
         <option value="$PROJECT_DIR$/naivebayes.py" />
         <option value="$PROJECT_DIR$/nbdocv1.py" />
+        <option value="$PROJECT_DIR$/nbdocv1ec.py" />
       </list>
     </option>
   </component>
@@ -94,9 +101,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="475" />
+    <option name="x" value="135" />
     <option name="y" value="23" />
-    <option name="width" value="872" />
+    <option name="width" value="1282" />
     <option name="height" value="863" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -141,6 +148,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -162,8 +171,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -173,13 +180,13 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/nbdocv1.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nbdocv1ec.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
   </component>
-  <component name="RunManager" selected="Python.NBDocV1">
+  <component name="RunManager" selected="Python.NBDocV1EC">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -649,9 +656,28 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <configuration default="false" name="NBDocV1EC" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="naivebayes" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nbdocv1ec.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.NBDigitV2" />
       <item index="1" class="java.lang.String" itemvalue="Python.NBDocV1" />
+      <item index="2" class="java.lang.String" itemvalue="Python.NBDocV1EC" />
     </list>
   </component>
   <component name="SbtLocalSettings">
@@ -671,16 +697,16 @@
       <updated>1428760692503</updated>
       <workItem from="1428760694832" duration="30579000" />
       <workItem from="1428885638111" duration="3390000" />
-      <workItem from="1428951672487" duration="4468000" />
+      <workItem from="1428951672487" duration="8260000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38437000" />
+    <option name="totallyTimeSpent" value="42229000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="475" y="23" width="872" height="863" extended-state="0" />
-    <editor active="true" />
+    <frame x="135" y="23" width="1282" height="863" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -700,8 +726,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492971" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26054358" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3771812" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17419355" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3771812" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -737,12 +763,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#25#44#0" expanded="true" />
+            <element signature="e#25#44#0" expanded="false" />
             <element signature="e#74#140#0" expanded="false" />
             <element signature="e#158#336#0" expanded="false" />
             <element signature="e#366#430#0" expanded="false" />
             <element signature="e#459#603#0" expanded="false" />
-            <element signature="e#631#1205#0" expanded="false" />
             <element signature="e#1250#1717#0" expanded="false" />
             <element signature="e#1751#2005#0" expanded="false" />
             <element signature="e#2053#2195#0" expanded="false" />
@@ -756,32 +781,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#58#0" expanded="false" />
+            <element signature="e#88#154#0" expanded="false" />
+            <element signature="e#172#350#0" expanded="false" />
+            <element signature="e#376#435#0" expanded="false" />
+            <element signature="e#463#840#0" expanded="false" />
+            <element signature="e#950#1197#0" expanded="false" />
+            <element signature="e#1220#1275#0" expanded="false" />
+            <element signature="e#1368#2023#0" expanded="false" />
+            <element signature="e#2269#2383#0" expanded="false" />
+            <element signature="e#2431#2576#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nbdigitv1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.706422">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nbdigitv2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-2.1651375">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#58#0" expanded="false" />
+            <element signature="e#88#154#0" expanded="false" />
+            <element signature="e#172#350#0" expanded="false" />
+            <element signature="e#376#435#0" expanded="false" />
+            <element signature="e#463#840#0" expanded="false" />
+            <element signature="e#950#1197#0" expanded="false" />
+            <element signature="e#1220#1275#0" expanded="false" />
+            <element signature="e#1368#2023#0" expanded="false" />
+            <element signature="e#2269#2383#0" expanded="false" />
+            <element signature="e#2431#2576#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nbdocv1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72477067">
-          <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.33251834">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="10" />
           <folding>
-            <element signature="e#25#44#0" expanded="true" />
+            <element signature="e#25#44#0" expanded="false" />
             <element signature="e#74#140#0" expanded="false" />
             <element signature="e#158#336#0" expanded="false" />
             <element signature="e#366#430#0" expanded="false" />
             <element signature="e#459#603#0" expanded="false" />
-            <element signature="e#631#1205#0" expanded="false" />
             <element signature="e#1250#1717#0" expanded="false" />
             <element signature="e#1751#2005#0" expanded="false" />
             <element signature="e#2053#2195#0" expanded="false" />
             <element signature="e#2243#2388#0" expanded="false" />
             <element signature="e#2428#2691#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nbdocv1ec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5114679">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding>
+            <element signature="e#25#44#0" expanded="true" />
+            <element signature="e#74#140#0" expanded="false" />
+            <element signature="e#1252#1506#0" expanded="false" />
+            <element signature="e#1554#1696#0" expanded="false" />
+            <element signature="e#1744#1889#0" expanded="false" />
+            <element signature="e#1929#2192#0" expanded="false" />
           </folding>
         </state>
       </provider>
