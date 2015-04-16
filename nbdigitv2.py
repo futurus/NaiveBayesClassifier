@@ -2,6 +2,7 @@ __author__ = 'vunguyen'
 dimension = 28
 from numpy import *
 import time
+from math import log
 
 
 def tic():
@@ -122,6 +123,24 @@ def analyze(actual, prediction):
     return None
 
 
+def project(iArray, multiplier):
+    from math import floor
+    out = zeros((iArray.shape[0] * multiplier, iArray.shape[1] * multiplier))
+
+    for i in range(len(out)):
+        for j in range(len(out[i])):
+            out[i, j] = iArray[floor(i / multiplier), floor(j / multiplier)]
+
+    return out
+
+
+def createGreyscale(out, matrix):
+    import matplotlib.pyplot as plt
+    # x = ((random.rand(28*28))*255).reshape(28, 28)
+    # plt.gray()
+    plt.imsave(out, project(matrix, 10))
+
+
 def countNB(trainData, trainLabels, m=1, n=1):
     # if we use a dict for last dimension, would be able to save more memory
     priorDists = getPriorDists(trainLabels)
@@ -139,8 +158,8 @@ def countNB(trainData, trainLabels, m=1, n=1):
 
 
 def trainNB(m=1, n=1, k=1, overlap=False):
-    trainData = getData(prepare("trainingimages"), m, n, overlap)
-    trainLabels = getLabels("traininglabels")
+    trainData = getData(prepare("p1/trainingimages"), m, n, overlap)
+    trainLabels = getLabels("p1/traininglabels")
 
     countTable, priorDists, numOfFeatures, nFeatVals = countNB(trainData, trainLabels, m, n)
     likelihoods = zeros((len(priorDists), numOfFeatures, nFeatVals))
@@ -154,17 +173,36 @@ def trainNB(m=1, n=1, k=1, overlap=False):
     return likelihoods, priorDists, numOfFeatures, nFeatVals
 
 
+def logLikelihood(digit, likelihood):
+    out = zeros((28, 28))
+
+    for i in range(len(out)):
+        for j in range(len(out[i])):
+            out[i, j] = log(likelihood[digit, i * 28 + j, 1])
+
+    return out
+
+
+def oddsRatios(digit1, digit2):
+    out = zeros((28, 28))
+
+    for i in range(len(out)):
+        for j in range(len(out[i])):
+            out[i, j] = digit1[i, j] - digit2[i, j]
+
+    return out
+
+
 def classify(m=1, n=1, k=1, overlap=False):
     from collections import OrderedDict
-    from math import log
     predictions = []
     model, priorDists, numOfFeatures, nFeatVals = trainNB(m, n, k, overlap)
 
     toc()
     print "done training"
 
-    testData = getData(prepare("testimages"), m, n, overlap)
-    testLabels = getLabels("testlabels")
+    testData = getData(prepare("p1/testimages"), m, n, overlap)
+    testLabels = getLabels("p1/testlabels")
     for case in range(len(testData)):
         probs = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
 
@@ -182,5 +220,13 @@ def classify(m=1, n=1, k=1, overlap=False):
 
 
 tic()
-classify(m=4, n=4)
+# classify()
+
+model, priorDists, numOfFeatures, nFeatVals = trainNB(m=1, n=1, k=1, overlap=False)
+
+for digit1 in range(10):
+    createGreyscale(digit1.__str__() + '.png', logLikelihood(digit1, model))
+    for digit2 in range(10):
+        createGreyscale(digit1.__str__() + ' over ' + digit2.__str__() + '.png', oddsRatios(logLikelihood(digit1, model), logLikelihood(digit2, model)))
+
 toc()
