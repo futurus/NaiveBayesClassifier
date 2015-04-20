@@ -1,5 +1,6 @@
 __author__ = 'vunguyen'
-dimension = 28
+height = 70
+width = 60
 from numpy import *
 import time
 from math import log
@@ -28,10 +29,10 @@ def prepare(finput):
     out = []
     lines = [line for line in open(finput)]
 
-    for nDigit in range(len(lines)/dimension):
+    for nDigit in range(len(lines)/height):
         digit = []
-        for i in range(dimension):
-            cline = list(lines[nDigit*dimension + i])
+        for i in range(height):
+            cline = list(lines[nDigit * height + i])
             cline.pop()  # remove new line char
             cline = map(replace, cline)
             digit.append(cline)
@@ -43,8 +44,8 @@ def prepare(finput):
 def getRaw(finput, case):
     lines = [line for line in open(finput)]
 
-    for i in range(dimension):
-        print lines[case * dimension + i][:(dimension-1)]
+    for i in range(height):
+        print lines[case * height + i][:(width-1)]
 
 
 def getLabels(finput):
@@ -52,7 +53,7 @@ def getLabels(finput):
 
 
 def getPriorDists(labels):
-    priorDists = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
+    priorDists = {0: 0, 1: 0}
 
     for i in range(len(labels)):
         priorDists[labels[i]] += 1
@@ -69,14 +70,6 @@ def bin2dec(a):
 
 def digitToFeatures(digit, m=1, n=1, overlap=False):  # by default we look at a pixel
     features = []
-
-    if m > digit.shape[0] or n > digit.shape[1]:
-        print "m or n too large (max 28)"
-        return None
-
-    if overlap is False and ((28 % m != 0) or (28 % n != 0)):
-        print "m or n is not a divisor of 28"
-        return None
 
     if overlap is False:
         for row in range(0, digit.shape[0], m):
@@ -100,7 +93,7 @@ def getData(digits, m=1, n=1, overlap=False):
 
 
 def confusionMatrix(actual, prediction):
-    mat = zeros((10, 10))
+    mat = zeros((2, 2))
 
     for i in range(len(actual)):
         mat[actual[i], prediction[i]] += 1
@@ -165,8 +158,8 @@ def countNB(trainData, trainLabels, m=1, n=1):
 
 
 def trainNB(m=1, n=1, k=1, overlap=False):
-    trainData = getData(prepare("p1/trainingimages"), m, n, overlap)
-    trainLabels = getLabels("p1/traininglabels")
+    trainData = getData(prepare("p1ec/facedatatrain"), m, n, overlap)
+    trainLabels = getLabels("p1ec/facedatatrainlabels")
 
     countTable, priorDists, numOfFeatures, nFeatVals = countNB(trainData, trainLabels, m, n)
     likelihoods = zeros((len(priorDists), numOfFeatures, nFeatVals))
@@ -181,17 +174,17 @@ def trainNB(m=1, n=1, k=1, overlap=False):
 
 
 def logLikelihood(digit, likelihood):
-    out = zeros((28, 28))
+    out = zeros((height, width))
 
     for i in range(len(out)):
         for j in range(len(out[i])):
-            out[i, j] = log(likelihood[digit, i * 28 + j, 1])
+            out[i, j] = log(likelihood[digit, i * width + j, 1])
 
     return out
 
 
 def oddsRatios(digit1, digit2):
-    out = zeros((28, 28))
+    out = zeros((height, width))
 
     for i in range(len(out)):
         for j in range(len(out[i])):
@@ -206,16 +199,16 @@ def classify(m=1, n=1, k=1, overlap=False):
     model, priorDists, numOfFeatures, nFeatVals = trainNB(m, n, k, overlap)
 
     # this part is for most prototypical instance
-    # maxProbs = {0: -5000, 1: -5000, 2: -5000, 3: -5000, 4: -5000, 5: -5000, 6: -5000, 7: -5000, 8: -5000, 9: -5000}
-    # prototypicals = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
+    maxProbs = {0: -5000, 1: -5000}
+    prototypicals = {0: 0, 1: 0}
 
     toc()
     print "done training"
 
-    testData = getData(prepare("p1/testimages"), m, n, overlap)
-    testLabels = getLabels("p1/testlabels")
+    testData = getData(prepare("p1ec/facedatatest"), m, n, overlap)
+    testLabels = getLabels("p1ec/facedatatestlabels")
     for case in range(len(testData)):
-        probs = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
+        probs = {0: 0, 1: 0}
 
         for dClass in probs.keys():
             probs[dClass] += log(priorDists[dClass])
@@ -226,29 +219,29 @@ def classify(m=1, n=1, k=1, overlap=False):
         probs = OrderedDict(sorted(probs.items(), key=lambda x: x[1], reverse=True))
 
         # this part is for most prototypical instance
-        # if (maxProbs[list(probs)[0]] < probs[list(probs)[0]]):
-        #     maxProbs[list(probs)[0]] = probs[list(probs)[0]]
-        #     prototypicals[list(probs)[0]] = case
+        if (maxProbs[list(probs)[0]] < probs[list(probs)[0]]):
+            maxProbs[list(probs)[0]] = probs[list(probs)[0]]
+            prototypicals[list(probs)[0]] = case
 
         # this part is for wrong prediction
-        # if list(probs)[0] != testLabels[case]:
-        #     print case
-        #     print "actual", testLabels[case]
-        #     print "prediction", list(probs)[0]
-        #     print probs
-        #     getRaw("p1/testimages", case)
+        if list(probs)[0] != testLabels[case]:
+            print case
+            print "actual", testLabels[case]
+            print "prediction", list(probs)[0]
+            print probs
+            getRaw("p1ec/facedatatest", case)
 
         predictions.append(list(probs)[0])
 
     analyze(testLabels, predictions)
 
     # this part is for most prototypical instance
-    # print maxProbs
-    # print prototypicals
-    #
-    # for dClass in prototypicals.keys():
-    #     print "proto", dClass
-    #     getRaw("p1/testimages", prototypicals[dClass])
+    print maxProbs
+    print prototypicals
+
+    for dClass in prototypicals.keys():
+        print "proto", dClass
+        getRaw("p1ec/facedatatest", prototypicals[dClass])
 
 
 tic()
@@ -256,10 +249,10 @@ classify(m=1, n=1, overlap=False)
 
 # this part is for loglikelihood and odds ratios imges
 # model, priorDists, numOfFeatures, nFeatVals = trainNB(m=1, n=1, k=1, overlap=False)
-#
-# for digit1 in range(10):
+
+# for digit1 in range(2):
 #     createGreyscale(digit1.__str__() + '.png', logLikelihood(digit1, model))
-#     for digit2 in range(10):
+#     for digit2 in range(2):
 #         createGreyscale(digit1.__str__() + ' over ' + digit2.__str__() + '.png', oddsRatios(logLikelihood(digit1, model), logLikelihood(digit2, model)))
 
 toc()

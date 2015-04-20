@@ -7,7 +7,125 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1c2db77-25ff-43cb-81a3-1b51d62ae6d9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nbfacev1.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/20newsgroups.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OddsRatios.xlsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/k1to50.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nbdigitv1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9 over 9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/visualization/9.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbdigitv2.py" afterPath="$PROJECT_DIR$/nbdigitv2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbdocv1.py" afterPath="$PROJECT_DIR$/nbdocv1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="naivebayes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,10 +139,11 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/naivebayes$NBDigitV2.coverage" NAME="NBDigitV2 Coverage Results" MODIFIED="1429162153195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/naivebayes$NBDigitV2.coverage" NAME="NBDigitV2 Coverage Results" MODIFIED="1429506948043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/naivebayes$NBFaceV1.coverage" NAME="NBFaceV1 Coverage Results" MODIFIED="1429498642869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/naivebayes$Prep.coverage" NAME="Prep Coverage Results" MODIFIED="1428812626179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/naivebayes$NBDocV1.coverage" NAME="NBDocV1 Coverage Results" MODIFIED="1428968242370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/naivebayes$NBDocV1EC.coverage" NAME="NBDocV1EC Coverage Results" MODIFIED="1428988432064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/naivebayes$NBDocV1.coverage" NAME="NBDocV1 Coverage Results" MODIFIED="1429505759506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/naivebayes$NBDocV1EC.coverage" NAME="NBDocV1EC Coverage Results" MODIFIED="1429505902229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -34,29 +153,7 @@
     <favorites_list name="naivebayes" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="nbdigitv2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nbdigitv2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6">
-              <caret line="227" column="20" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="20" />
-              <folding>
-                <element signature="e#39#58#0" expanded="true" />
-                <element signature="e#193#371#0" expanded="false" />
-                <element signature="e#397#456#0" expanded="false" />
-                <element signature="e#484#861#0" expanded="false" />
-                <element signature="e#971#1218#0" expanded="false" />
-                <element signature="e#1241#1296#0" expanded="false" />
-                <element signature="e#1389#2044#0" expanded="false" />
-                <element signature="e#2290#2404#0" expanded="false" />
-                <element signature="e#2452#2597#0" expanded="false" />
-                <element signature="e#2637#2900#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,6 +171,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/nbfacev1.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/nbdocv1.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/nbdigitv2.py" root0="SKIP_INSPECTION" />
   </component>
@@ -82,8 +180,9 @@
       <list>
         <option value="$PROJECT_DIR$/prepare.py" />
         <option value="$PROJECT_DIR$/naivebayes.py" />
-        <option value="$PROJECT_DIR$/nbdocv1.py" />
         <option value="$PROJECT_DIR$/nbdocv1ec.py" />
+        <option value="$PROJECT_DIR$/nbfacev1.py" />
+        <option value="$PROJECT_DIR$/nbdocv1.py" />
         <option value="$PROJECT_DIR$/nbdigitv2.py" />
       </list>
     </option>
@@ -96,9 +195,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="135" />
-    <option name="y" value="24" />
-    <option name="width" value="1282" />
+    <option name="x" value="26" />
+    <option name="y" value="23" />
+    <option name="width" value="1022" />
     <option name="height" value="863" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -175,7 +274,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/nbdocv1ec.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nbfacev1.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
@@ -633,6 +732,24 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="NBFaceV1" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="naivebayes" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nbfacev1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
     <configuration default="false" name="NBDocV1" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -669,10 +786,11 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.NBDigitV2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.NBDocV1" />
-      <item index="2" class="java.lang.String" itemvalue="Python.NBDocV1EC" />
+      <item index="1" class="java.lang.String" itemvalue="Python.NBFaceV1" />
+      <item index="2" class="java.lang.String" itemvalue="Python.NBDocV1" />
+      <item index="3" class="java.lang.String" itemvalue="Python.NBDocV1EC" />
     </list>
   </component>
   <component name="SbtLocalSettings">
@@ -693,16 +811,16 @@
       <workItem from="1428760694832" duration="30579000" />
       <workItem from="1428885638111" duration="3390000" />
       <workItem from="1428951672487" duration="8260000" />
-      <workItem from="1429158523781" duration="3327000" />
+      <workItem from="1429158523781" duration="22797000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45556000" />
+    <option name="totallyTimeSpent" value="65026000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="135" y="24" width="1282" height="863" extended-state="0" />
-    <editor active="true" />
+    <frame x="26" y="23" width="1022" height="863" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -722,8 +840,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492971" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17419355" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4590604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22040816" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33154362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -773,6 +891,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#44#0" expanded="false" />
+            <element signature="e#74#140#0" expanded="false" />
+            <element signature="e#158#336#0" expanded="false" />
+            <element signature="e#366#430#0" expanded="false" />
+            <element signature="e#459#603#0" expanded="false" />
+            <element signature="e#1480#1947#0" expanded="false" />
+            <element signature="e#1981#2235#0" expanded="false" />
+            <element signature="e#2283#2425#0" expanded="false" />
+            <element signature="e#2473#2618#0" expanded="false" />
+            <element signature="e#2658#2921#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -785,60 +915,75 @@
             <element signature="e#193#371#0" expanded="false" />
             <element signature="e#397#456#0" expanded="false" />
             <element signature="e#484#861#0" expanded="false" />
-            <element signature="e#971#1218#0" expanded="false" />
-            <element signature="e#1241#1296#0" expanded="false" />
-            <element signature="e#1389#2044#0" expanded="false" />
-            <element signature="e#2290#2404#0" expanded="false" />
-            <element signature="e#2452#2597#0" expanded="false" />
-            <element signature="e#2637#2900#0" expanded="false" />
+            <element signature="e#1133#1380#0" expanded="false" />
+            <element signature="e#1403#1458#0" expanded="false" />
+            <element signature="e#1551#2206#0" expanded="false" />
+            <element signature="e#2452#2566#0" expanded="false" />
+            <element signature="e#2614#2759#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nbdigitv1.py">
+    <entry file="file://$PROJECT_DIR$/nbfacev1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.706422">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.0913461">
+          <caret line="205" column="25" selection-start-line="205" selection-start-column="25" selection-end-line="205" selection-end-column="25" />
+          <folding>
+            <element signature="e#47#66#0" expanded="true" />
+            <element signature="e#201#379#0" expanded="false" />
+            <element signature="e#405#464#0" expanded="false" />
+            <element signature="e#1346#1401#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nbdocv1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33251834">
-          <caret line="33" column="10" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nbdocv1ec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.52294856">
-          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.90425533">
+          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
           <folding>
-            <element signature="e#25#44#0" expanded="false" />
             <element signature="e#74#140#0" expanded="false" />
-            <element signature="e#1252#1506#0" expanded="false" />
-            <element signature="e#1554#1696#0" expanded="false" />
-            <element signature="e#1744#1889#0" expanded="false" />
-            <element signature="e#1929#2192#0" expanded="false" />
+            <element signature="e#158#336#0" expanded="false" />
+            <element signature="e#366#430#0" expanded="false" />
+            <element signature="e#459#603#0" expanded="false" />
+            <element signature="e#631#1435#0" expanded="false" />
+            <element signature="e#1480#1947#0" expanded="false" />
+            <element signature="e#1981#2235#0" expanded="false" />
+            <element signature="e#2283#2425#0" expanded="false" />
+            <element signature="e#2473#2618#0" expanded="false" />
+            <element signature="e#2658#2921#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nbdigitv2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6">
-          <caret line="227" column="20" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.39361703">
+          <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
           <folding>
             <element signature="e#39#58#0" expanded="true" />
             <element signature="e#193#371#0" expanded="false" />
             <element signature="e#397#456#0" expanded="false" />
             <element signature="e#484#861#0" expanded="false" />
-            <element signature="e#971#1218#0" expanded="false" />
-            <element signature="e#1241#1296#0" expanded="false" />
-            <element signature="e#1389#2044#0" expanded="false" />
-            <element signature="e#2290#2404#0" expanded="false" />
-            <element signature="e#2452#2597#0" expanded="false" />
-            <element signature="e#2637#2900#0" expanded="false" />
+            <element signature="e#1133#1380#0" expanded="false" />
+            <element signature="e#1403#1458#0" expanded="false" />
+            <element signature="e#1551#2206#0" expanded="false" />
+            <element signature="e#2452#2566#0" expanded="false" />
+            <element signature="e#2614#2759#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nbdocv1ec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0531915">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding>
+            <element signature="e#74#140#0" expanded="false" />
+            <element signature="e#1252#1506#0" expanded="false" />
+            <element signature="e#1554#1696#0" expanded="false" />
+            <element signature="e#1744#1889#0" expanded="false" />
+            <element signature="e#1929#2192#0" expanded="false" />
           </folding>
         </state>
       </provider>

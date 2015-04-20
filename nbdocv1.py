@@ -42,7 +42,15 @@ def prepare(finput):
 
     for i in range(len(lines)):
         for word in docs[i].keys():
+            # bag of word
             featureMat[i, dictionary.index(word)] = docs[i][word]
+
+            # set of word
+            # if docs[i][word] > 0:
+            #     featureMat[i, dictionary.index(word)] = 1
+            # else:
+            #     featureMat[i, dictionary.index(word)] = 0
+
 
     return dictionary, docClassLabels, featureMat  # return matrix and labels
 
@@ -131,6 +139,9 @@ def classify(trainFile, testFile):
     conditionalProbTable = trainNB(trainingMatrix, trainingLabels)
     testLabels, testMatrix = translateDoc(testFile, dictionary)
 
+    print "done training"
+    toc()
+
     numOfClasses = len(set(trainingLabels))
     priorProbs = getPriorDists(trainingLabels)
 
@@ -151,5 +162,33 @@ def classify(trainFile, testFile):
 
 
 tic()
-classify("8category.training.txt", "8category.testing.txt")
+classify("p2/8category.training.txt", "p2/8category.testing.txt")
+
+
+# this part is for top 20 likelihoods and log odds ratios
+# dictionary, trainingLabels, trainingMatrix = prepare("p2/8category.training.txt")
+# conditionalProbTable = trainNB(trainingMatrix, trainingLabels)
+#
+# from collections import OrderedDict
+#
+# dict1 = {}
+# dict2 = {}
+# dict3 = {}
+# dict4 = {}
+# for word in dictionary:
+#     dict1[word] = log(conditionalProbTable[1, dictionary.index(word)]/conditionalProbTable[3, dictionary.index(word)])
+#     dict2[word] = log(conditionalProbTable[5, dictionary.index(word)]/conditionalProbTable[1, dictionary.index(word)])
+#     dict3[word] = log(conditionalProbTable[7, dictionary.index(word)]/conditionalProbTable[3, dictionary.index(word)])
+#     dict4[word] = log(conditionalProbTable[7, dictionary.index(word)]/conditionalProbTable[1, dictionary.index(word)])
+#
+# oDict1 = OrderedDict(sorted(dict1.items(), key=lambda x: x[1], reverse=True))
+# oDict2 = OrderedDict(sorted(dict2.items(), key=lambda x: x[1], reverse=True))
+# oDict3 = OrderedDict(sorted(dict3.items(), key=lambda x: x[1], reverse=True))
+# oDict4 = OrderedDict(sorted(dict4.items(), key=lambda x: x[1], reverse=True))
+#
+# print list(oDict1)[0:20]
+# print list(oDict2)[0:20]
+# print list(oDict3)[0:20]
+# print list(oDict4)[0:20]
+
 toc()
